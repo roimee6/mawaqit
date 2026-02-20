@@ -1,0 +1,35 @@
+{
+  "name": "@max-xoo/mawaqit",
+  "version": "1.0.0",
+  "description": "A JavaScript wrapper around the unofficial Mawaqit API",
+  "keywords": [
+    "mawaqit",
+    "prayer",
+    "islam",
+    "mosque",
+    "salat",
+    "quran"
+  ],
+  "homepage": "https://github.com/roimee6/mawaqit#readme",
+  "bugs": {
+    "url": "https://github.com/roimee6/mawaqit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roimee6/mawaqit.git"
+  },
+  "license": "MIT",
+  "author": "Maxence",
+  "main": "dist/index.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "test": "node test.cjs"
+  },
+  "dependencies": {
+    "axios": "^1.13.5",
+    "cheerio": "^1.2.0"
+  },
+  "devDependencies": {}
+}
