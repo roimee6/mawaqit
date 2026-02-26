@@ -34,10 +34,26 @@ class MawaqitValidationError extends MawaqitError {
     }
 }
 
+class MawaqitSearchError extends MawaqitError {
+    constructor(query) {
+        super(`Search failed for "${query}"`, 502);
+        this.name = "MawaqitSearchError";
+    }
+}
+
+class MawaqitCountryError extends MawaqitError {
+    constructor(countryCode) {
+        super(`Failed to fetch mosques for country "${countryCode}"`, 502);
+        this.name = "MawaqitCountryError";
+    }
+}
+
 module.exports = {
     MawaqitError,
     MawaqitNotFoundError,
     MawaqitParseError,
     MawaqitFetchError,
     MawaqitValidationError,
+    MawaqitSearchError,
+    MawaqitCountryError,
 };

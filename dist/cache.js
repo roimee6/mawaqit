@@ -16,10 +16,10 @@ function getFromCache(key) {
     return entry.data;
 }
 
-function setToCache(key, data) {
+function setToCache(key, data, ttlMs) {
     cache.set(key, {
         data,
-        expiresAt: Date.now() + getMsUntilMidnight(),
+        expiresAt: Date.now() + (ttlMs || getMsUntilMidnight()),
     });
 }
 
@@ -35,10 +35,26 @@ function getCacheSize() {
     return cache.size;
 }
 
+function getCacheKeys() {
+    return [...cache.keys()];
+}
+
+function hasCache(key) {
+    const entry = cache.get(key);
+    if (!entry) return false;
+    if (Date.now() > entry.expiresAt) {
+        cache.delete(key);
+        return false;
+    }
+    return true;
+}
+
 module.exports = {
     getFromCache,
     setToCache,
     clearCache,
     deleteCacheEntry,
     getCacheSize,
+    getCacheKeys,
+    hasCache,
 };

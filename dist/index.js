@@ -1,20 +1,43 @@
-const {
-    fetchMawaqit
-} = require("./fetch");
+const { fetchMawaqit, fetchMosquesByCountry, fetchSearchMosques } = require("./fetch");
 
 const {
     getPrayerTimesOfTheDay,
+    getIqamaTimes,
+    getNextPrayer,
+    getJumuaTimes,
     getCalendar,
     getMonth,
+    getDay,
     getMonthIqama,
     getAnnouncements,
     getServices,
+    getMosqueInfo,
+    getFlashMessage,
+    getRawConfData,
+    getMosquesByCountry,
+    getMosquesByCountryCount,
+    getMosquesByCity,
+    getMosquesByZipcode,
+    getMosquesByName,
+    getMosquesByRadius,
+    getNearestMosque,
+    getNearestMosques,
+    searchMosques,
+    searchByName,
+    searchByZipcode,
+    searchByCity,
+    searchFull,
+    searchWithTimes,
+    getAllCountryMosquesWithTimes,
+    getMultipleMosqueTimes,
 } = require("./mawaqit");
 
 const {
     clearCache,
     deleteCacheEntry,
     getCacheSize,
+    getCacheKeys,
+    hasCache,
 } = require("./cache");
 
 const {
@@ -23,26 +46,59 @@ const {
     MawaqitParseError,
     MawaqitFetchError,
     MawaqitValidationError,
+    MawaqitSearchError,
+    MawaqitCountryError,
 } = require("./errors");
 
 module.exports = {
     fetchMawaqit,
+    fetchMosquesByCountry,
+    fetchSearchMosques,
 
     getPrayerTimesOfTheDay,
+    getIqamaTimes,
+    getNextPrayer,
+    getJumuaTimes,
     getCalendar,
     getMonth,
+    getDay,
     getMonthIqama,
-
     getAnnouncements,
     getServices,
+    getMosqueInfo,
+    getFlashMessage,
+    getRawConfData,
+
+    getMosquesByCountry,
+    getMosquesByCountryCount,
+    getMosquesByCity,
+    getMosquesByZipcode,
+    getMosquesByName,
+    getMosquesByRadius,
+    getNearestMosque,
+    getNearestMosques,
+
+    searchMosques,
+    searchByName,
+    searchByZipcode,
+    searchByCity,
+    searchFull,
+    searchWithTimes,
+
+    getAllCountryMosquesWithTimes,
+    getMultipleMosqueTimes,
 
     clearCache,
     deleteCacheEntry,
     getCacheSize,
+    getCacheKeys,
+    hasCache,
 
     MawaqitError,
     MawaqitNotFoundError,
     MawaqitParseError,
     MawaqitFetchError,
     MawaqitValidationError,
+    MawaqitSearchError,
+    MawaqitCountryError,
 };
